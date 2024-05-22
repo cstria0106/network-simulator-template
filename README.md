@@ -80,7 +80,7 @@ Link: forwarding packet from node #3, to node #2
 Router #2: forwarding packet (from: 0, to: 1, 13 bytes)
 Link: forwarding packet from node #2, to node #0
 Host #0: received packet, destination port: 3000
-EchoService: received "Hello, world!"
+EchoService: received "Hello, world!" from 0:1000, send reply with same data
 Link: forwarding packet from node #0, to node #2
 Router #2: forwarding packet (from: 1, to: 0, 13 bytes)
 Link: forwarding packet from node #2, to node #3
@@ -89,7 +89,7 @@ Link: forwarding packet from node #3, to node #5
 Router #5: forwarding packet (from: 1, to: 0, 13 bytes)
 Link: forwarding packet from node #5, to node #1
 Host #1: received packet, destination port: 1000
-MessageService: received "Hello, world!"
+MessageService: received "Hello, world!" from 1:3000
 Link: forwarding packet from node #1, to node #5
 Router #5: forwarding packet (from: 0, to: 1, 11 bytes)
 Link: forwarding packet from node #5, to node #3
@@ -98,7 +98,7 @@ Link: forwarding packet from node #3, to node #2
 Router #2: forwarding packet (from: 0, to: 1, 11 bytes)
 Link: forwarding packet from node #2, to node #0
 Host #0: received packet, destination port: 3000
-EchoService: received "Bye, world!"
+EchoService: received "Bye, world!" from 0:1000, send reply with same data
 Link: forwarding packet from node #0, to node #2
 Router #2: forwarding packet (from: 1, to: 0, 11 bytes)
 Link: forwarding packet from node #2, to node #3
@@ -107,7 +107,7 @@ Link: forwarding packet from node #3, to node #5
 Router #5: forwarding packet (from: 1, to: 0, 11 bytes)
 Link: forwarding packet from node #5, to node #1
 Host #1: received packet, destination port: 1000
-MessageService: received "Bye, world!"
+MessageService: received "Bye, world!" from 1:3000
 ```
 
 ```second 시나리오 출력 예시
