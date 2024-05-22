@@ -72,6 +72,7 @@ MessageService: received "Hello, world!"
 ## first 시나리오 출력 예시
 
 ```
+Host #1: sending packet (from: 0, to: 1, 13 bytes)
 Link: forwarding packet from node #1, to node #5
 Router #5: forwarding packet (from: 0, to: 1, 13 bytes)
 Link: forwarding packet from node #5, to node #3
@@ -81,6 +82,7 @@ Router #2: forwarding packet (from: 0, to: 1, 13 bytes)
 Link: forwarding packet from node #2, to node #0
 Host #0: received packet, destination port: 3000
 EchoService: received "Hello, world!" from 0:1000, send reply with same data
+Host #0: sending packet (from: 1, to: 0, 13 bytes)
 Link: forwarding packet from node #0, to node #2
 Router #2: forwarding packet (from: 1, to: 0, 13 bytes)
 Link: forwarding packet from node #2, to node #3
@@ -90,6 +92,7 @@ Router #5: forwarding packet (from: 1, to: 0, 13 bytes)
 Link: forwarding packet from node #5, to node #1
 Host #1: received packet, destination port: 1000
 MessageService: received "Hello, world!" from 1:3000
+Host #1: sending packet (from: 0, to: 1, 11 bytes)
 Link: forwarding packet from node #1, to node #5
 Router #5: forwarding packet (from: 0, to: 1, 11 bytes)
 Link: forwarding packet from node #5, to node #3
@@ -99,6 +102,7 @@ Router #2: forwarding packet (from: 0, to: 1, 11 bytes)
 Link: forwarding packet from node #2, to node #0
 Host #0: received packet, destination port: 3000
 EchoService: received "Bye, world!" from 0:1000, send reply with same data
+Host #0: sending packet (from: 1, to: 0, 11 bytes)
 Link: forwarding packet from node #0, to node #2
 Router #2: forwarding packet (from: 1, to: 0, 11 bytes)
 Link: forwarding packet from node #2, to node #3
@@ -110,75 +114,91 @@ Host #1: received packet, destination port: 1000
 MessageService: received "Bye, world!" from 1:3000
 ```
 
-```second 시나리오 출력 예시
+## second 시나리오 출력 예시
+
+```
+Host #1: sending packet (from: 456, to: 123, 7 bytes)
 Link: forwarding packet from node #1, to node #6
 Router #6: forwarding packet (from: 456, to: 123, 7 bytes)
 Link: forwarding packet from node #6, to node #0
 Host #0: received packet, destination port: 3000
 EchoService: received "Hello 0" from 456:1000, send reply with same data
+Host #0: sending packet (from: 123, to: 456, 7 bytes)
 Link: forwarding packet from node #0, to node #6
 Router #6: forwarding packet (from: 123, to: 456, 7 bytes)
 Link: forwarding packet from node #6, to node #1
 Host #1: received packet, destination port: 1000
 MessageService: received "Hello 0" from 123:3000
+Host #3: sending packet (from: 457, to: 123, 7 bytes)
 Link: forwarding packet from node #3, to node #6
 Router #6: forwarding packet (from: 457, to: 123, 7 bytes)
 Link: forwarding packet from node #6, to node #0
 Host #0: received packet, destination port: 3000
 EchoService: received "Hello 0" from 457:1000, send reply with same data
+Host #0: sending packet (from: 123, to: 457, 7 bytes)
 Link: forwarding packet from node #0, to node #6
 Router #6: forwarding packet (from: 123, to: 457, 7 bytes)
 Link: forwarding packet from node #6, to node #3
 Host #3: received packet, destination port: 1000
 MessageService: received "Hello 0" from 123:3000
+Host #5: sending packet (from: 458, to: 123, 7 bytes)
 Link: forwarding packet from node #5, to node #6
 Router #6: forwarding packet (from: 458, to: 123, 7 bytes)
 Link: forwarding packet from node #6, to node #0
 Host #0: received packet, destination port: 3000
 EchoService: received "Hello 0" from 458:1000, send reply with same data
+Host #0: sending packet (from: 123, to: 458, 7 bytes)
 Link: forwarding packet from node #0, to node #6
 Router #6: forwarding packet (from: 123, to: 458, 7 bytes)
 Link: forwarding packet from node #6, to node #5
 Host #5: received packet, destination port: 1000
 MessageService: received "Hello 0" from 123:3000
+Host #1: sending packet (from: 456, to: 124, 7 bytes)
 Link: forwarding packet from node #1, to node #6
 Router #6: forwarding packet (from: 456, to: 124, 7 bytes)
 Link: forwarding packet from node #6, to node #2
 Host #2: received packet, destination port: 3000
 EchoService: received "Hello 0" from 456:1001, send reply with same data
+Host #2: sending packet (from: 124, to: 456, 7 bytes)
 Link: forwarding packet from node #2, to node #6
 Router #6: forwarding packet (from: 124, to: 456, 7 bytes)
 Link: forwarding packet from node #6, to node #1
 Host #1: received packet, destination port: 1001
 Host #1: received packet, destination port: 1001
 MessageService: received "Hello 0" from 124:3000
+Host #3: sending packet (from: 457, to: 124, 7 bytes)
 Link: forwarding packet from node #3, to node #6
 Router #6: forwarding packet (from: 457, to: 124, 7 bytes)
 Link: forwarding packet from node #6, to node #2
 Host #2: received packet, destination port: 3000
 EchoService: received "Hello 0" from 457:1001, send reply with same data
+Host #2: sending packet (from: 124, to: 457, 7 bytes)
 Link: forwarding packet from node #2, to node #6
 Router #6: forwarding packet (from: 124, to: 457, 7 bytes)
 Link: forwarding packet from node #6, to node #3
 Host #3: received packet, destination port: 1001
 Host #3: received packet, destination port: 1001
 MessageService: received "Hello 0" from 124:3000
+Host #5: sending packet (from: 458, to: 124, 7 bytes)
 Link: forwarding packet from node #5, to node #6
 Router #6: forwarding packet (from: 458, to: 124, 7 bytes)
 Link: forwarding packet from node #6, to node #2
 Host #2: received packet, destination port: 3000
 EchoService: received "Hello 0" from 458:1001, send reply with same data
+Host #2: sending packet (from: 124, to: 458, 7 bytes)
 Link: forwarding packet from node #2, to node #6
 Router #6: forwarding packet (from: 124, to: 458, 7 bytes)
 Link: forwarding packet from node #6, to node #5
 Host #5: received packet, destination port: 1001
 Host #5: received packet, destination port: 1001
 MessageService: received "Hello 0" from 124:3000
+Host #1: sending packet (from: 456, to: 125, 7 bytes)
 Link: forwarding packet from node #1, to node #6
 Router #6: forwarding packet (from: 456, to: 125, 7 bytes)
 Link: forwarding packet from node #6, to node #4
 Host #4: received packet, destination port: 3000
 EchoService: received "Hello 0" from 456:1002, send reply with same data
+Host #4: sending packet (from: 125, to: 456, 7 bytes)
 Link: forwarding packet from node #4, to node #6
 Router #6: forwarding packet (from: 125, to: 456, 7 bytes)
 Link: forwarding packet from node #6, to node #1
@@ -186,11 +206,13 @@ Host #1: received packet, destination port: 1002
 Host #1: received packet, destination port: 1002
 Host #1: received packet, destination port: 1002
 MessageService: received "Hello 0" from 125:3000
+Host #3: sending packet (from: 457, to: 125, 7 bytes)
 Link: forwarding packet from node #3, to node #6
 Router #6: forwarding packet (from: 457, to: 125, 7 bytes)
 Link: forwarding packet from node #6, to node #4
 Host #4: received packet, destination port: 3000
 EchoService: received "Hello 0" from 457:1002, send reply with same data
+Host #4: sending packet (from: 125, to: 457, 7 bytes)
 Link: forwarding packet from node #4, to node #6
 Router #6: forwarding packet (from: 125, to: 457, 7 bytes)
 Link: forwarding packet from node #6, to node #3
@@ -198,11 +220,13 @@ Host #3: received packet, destination port: 1002
 Host #3: received packet, destination port: 1002
 Host #3: received packet, destination port: 1002
 MessageService: received "Hello 0" from 125:3000
+Host #5: sending packet (from: 458, to: 125, 7 bytes)
 Link: forwarding packet from node #5, to node #6
 Router #6: forwarding packet (from: 458, to: 125, 7 bytes)
 Link: forwarding packet from node #6, to node #4
 Host #4: received packet, destination port: 3000
 EchoService: received "Hello 0" from 458:1002, send reply with same data
+Host #4: sending packet (from: 125, to: 458, 7 bytes)
 Link: forwarding packet from node #4, to node #6
 Router #6: forwarding packet (from: 125, to: 458, 7 bytes)
 Link: forwarding packet from node #6, to node #5
@@ -210,95 +234,115 @@ Host #5: received packet, destination port: 1002
 Host #5: received packet, destination port: 1002
 Host #5: received packet, destination port: 1002
 MessageService: received "Hello 0" from 125:3000
+Host #1: sending packet (from: 456, to: 0, 7 bytes)
 Link: forwarding packet from node #1, to node #6
 Router #6: no route for packet (from: 456, to: 0, 7 bytes)
+Host #3: sending packet (from: 457, to: 0, 7 bytes)
 Link: forwarding packet from node #3, to node #6
 Router #6: no route for packet (from: 457, to: 0, 7 bytes)
+Host #5: sending packet (from: 458, to: 0, 7 bytes)
 Link: forwarding packet from node #5, to node #6
 Router #6: no route for packet (from: 458, to: 0, 7 bytes)
+Host #1: sending packet (from: 456, to: 123, 7 bytes)
 Link: forwarding packet from node #1, to node #6
 Router #6: forwarding packet (from: 456, to: 123, 7 bytes)
 Link: forwarding packet from node #6, to node #0
 Host #0: received packet, destination port: 0
 Host #0: no service for packet (from: 456, to: 123, 7 bytes)
+Host #3: sending packet (from: 457, to: 123, 7 bytes)
 Link: forwarding packet from node #3, to node #6
 Router #6: forwarding packet (from: 457, to: 123, 7 bytes)
 Link: forwarding packet from node #6, to node #0
 Host #0: received packet, destination port: 0
 Host #0: no service for packet (from: 457, to: 123, 7 bytes)
+Host #5: sending packet (from: 458, to: 123, 7 bytes)
 Link: forwarding packet from node #5, to node #6
 Router #6: forwarding packet (from: 458, to: 123, 7 bytes)
 Link: forwarding packet from node #6, to node #0
 Host #0: received packet, destination port: 0
 Host #0: no service for packet (from: 458, to: 123, 7 bytes)
+Host #1: sending packet (from: 456, to: 123, 7 bytes)
 Link: forwarding packet from node #1, to node #6
 Router #6: forwarding packet (from: 456, to: 123, 7 bytes)
 Link: forwarding packet from node #6, to node #0
 Host #0: received packet, destination port: 3000
 EchoService: received "Hello 1" from 456:1000, send reply with same data
+Host #0: sending packet (from: 123, to: 456, 7 bytes)
 Link: forwarding packet from node #0, to node #6
 Router #6: forwarding packet (from: 123, to: 456, 7 bytes)
 Link: forwarding packet from node #6, to node #1
 Host #1: received packet, destination port: 1000
 MessageService: received "Hello 1" from 123:3000
+Host #3: sending packet (from: 457, to: 123, 7 bytes)
 Link: forwarding packet from node #3, to node #6
 Router #6: forwarding packet (from: 457, to: 123, 7 bytes)
 Link: forwarding packet from node #6, to node #0
 Host #0: received packet, destination port: 3000
 EchoService: received "Hello 1" from 457:1000, send reply with same data
+Host #0: sending packet (from: 123, to: 457, 7 bytes)
 Link: forwarding packet from node #0, to node #6
 Router #6: forwarding packet (from: 123, to: 457, 7 bytes)
 Link: forwarding packet from node #6, to node #3
 Host #3: received packet, destination port: 1000
 MessageService: received "Hello 1" from 123:3000
+Host #5: sending packet (from: 458, to: 123, 7 bytes)
 Link: forwarding packet from node #5, to node #6
 Router #6: forwarding packet (from: 458, to: 123, 7 bytes)
 Link: forwarding packet from node #6, to node #0
 Host #0: received packet, destination port: 3000
 EchoService: received "Hello 1" from 458:1000, send reply with same data
+Host #0: sending packet (from: 123, to: 458, 7 bytes)
 Link: forwarding packet from node #0, to node #6
 Router #6: forwarding packet (from: 123, to: 458, 7 bytes)
 Link: forwarding packet from node #6, to node #5
 Host #5: received packet, destination port: 1000
 MessageService: received "Hello 1" from 123:3000
+Host #1: sending packet (from: 456, to: 124, 7 bytes)
 Link: forwarding packet from node #1, to node #6
 Router #6: forwarding packet (from: 456, to: 124, 7 bytes)
 Link: forwarding packet from node #6, to node #2
 Host #2: received packet, destination port: 3000
 EchoService: received "Hello 1" from 456:1001, send reply with same data
+Host #2: sending packet (from: 124, to: 456, 7 bytes)
 Link: forwarding packet from node #2, to node #6
 Router #6: forwarding packet (from: 124, to: 456, 7 bytes)
 Link: forwarding packet from node #6, to node #1
 Host #1: received packet, destination port: 1001
 Host #1: received packet, destination port: 1001
 MessageService: received "Hello 1" from 124:3000
+Host #3: sending packet (from: 457, to: 124, 7 bytes)
 Link: forwarding packet from node #3, to node #6
 Router #6: forwarding packet (from: 457, to: 124, 7 bytes)
 Link: forwarding packet from node #6, to node #2
 Host #2: received packet, destination port: 3000
 EchoService: received "Hello 1" from 457:1001, send reply with same data
+Host #2: sending packet (from: 124, to: 457, 7 bytes)
 Link: forwarding packet from node #2, to node #6
 Router #6: forwarding packet (from: 124, to: 457, 7 bytes)
 Link: forwarding packet from node #6, to node #3
 Host #3: received packet, destination port: 1001
 Host #3: received packet, destination port: 1001
 MessageService: received "Hello 1" from 124:3000
+Host #5: sending packet (from: 458, to: 124, 7 bytes)
 Link: forwarding packet from node #5, to node #6
 Router #6: forwarding packet (from: 458, to: 124, 7 bytes)
 Link: forwarding packet from node #6, to node #2
 Host #2: received packet, destination port: 3000
 EchoService: received "Hello 1" from 458:1001, send reply with same data
+Host #2: sending packet (from: 124, to: 458, 7 bytes)
 Link: forwarding packet from node #2, to node #6
 Router #6: forwarding packet (from: 124, to: 458, 7 bytes)
 Link: forwarding packet from node #6, to node #5
 Host #5: received packet, destination port: 1001
 Host #5: received packet, destination port: 1001
 MessageService: received "Hello 1" from 124:3000
+Host #1: sending packet (from: 456, to: 125, 7 bytes)
 Link: forwarding packet from node #1, to node #6
 Router #6: forwarding packet (from: 456, to: 125, 7 bytes)
 Link: forwarding packet from node #6, to node #4
 Host #4: received packet, destination port: 3000
 EchoService: received "Hello 1" from 456:1002, send reply with same data
+Host #4: sending packet (from: 125, to: 456, 7 bytes)
 Link: forwarding packet from node #4, to node #6
 Router #6: forwarding packet (from: 125, to: 456, 7 bytes)
 Link: forwarding packet from node #6, to node #1
@@ -306,11 +350,13 @@ Host #1: received packet, destination port: 1002
 Host #1: received packet, destination port: 1002
 Host #1: received packet, destination port: 1002
 MessageService: received "Hello 1" from 125:3000
+Host #3: sending packet (from: 457, to: 125, 7 bytes)
 Link: forwarding packet from node #3, to node #6
 Router #6: forwarding packet (from: 457, to: 125, 7 bytes)
 Link: forwarding packet from node #6, to node #4
 Host #4: received packet, destination port: 3000
 EchoService: received "Hello 1" from 457:1002, send reply with same data
+Host #4: sending packet (from: 125, to: 457, 7 bytes)
 Link: forwarding packet from node #4, to node #6
 Router #6: forwarding packet (from: 125, to: 457, 7 bytes)
 Link: forwarding packet from node #6, to node #3
@@ -318,11 +364,13 @@ Host #3: received packet, destination port: 1002
 Host #3: received packet, destination port: 1002
 Host #3: received packet, destination port: 1002
 MessageService: received "Hello 1" from 125:3000
+Host #5: sending packet (from: 458, to: 125, 7 bytes)
 Link: forwarding packet from node #5, to node #6
 Router #6: forwarding packet (from: 458, to: 125, 7 bytes)
 Link: forwarding packet from node #6, to node #4
 Host #4: received packet, destination port: 3000
 EchoService: received "Hello 1" from 458:1002, send reply with same data
+Host #4: sending packet (from: 125, to: 458, 7 bytes)
 Link: forwarding packet from node #4, to node #6
 Router #6: forwarding packet (from: 125, to: 458, 7 bytes)
 Link: forwarding packet from node #6, to node #5
@@ -330,95 +378,115 @@ Host #5: received packet, destination port: 1002
 Host #5: received packet, destination port: 1002
 Host #5: received packet, destination port: 1002
 MessageService: received "Hello 1" from 125:3000
+Host #1: sending packet (from: 456, to: 0, 7 bytes)
 Link: forwarding packet from node #1, to node #6
 Router #6: no route for packet (from: 456, to: 0, 7 bytes)
+Host #3: sending packet (from: 457, to: 0, 7 bytes)
 Link: forwarding packet from node #3, to node #6
 Router #6: no route for packet (from: 457, to: 0, 7 bytes)
+Host #5: sending packet (from: 458, to: 0, 7 bytes)
 Link: forwarding packet from node #5, to node #6
 Router #6: no route for packet (from: 458, to: 0, 7 bytes)
+Host #1: sending packet (from: 456, to: 123, 7 bytes)
 Link: forwarding packet from node #1, to node #6
 Router #6: forwarding packet (from: 456, to: 123, 7 bytes)
 Link: forwarding packet from node #6, to node #0
 Host #0: received packet, destination port: 0
 Host #0: no service for packet (from: 456, to: 123, 7 bytes)
+Host #3: sending packet (from: 457, to: 123, 7 bytes)
 Link: forwarding packet from node #3, to node #6
 Router #6: forwarding packet (from: 457, to: 123, 7 bytes)
 Link: forwarding packet from node #6, to node #0
 Host #0: received packet, destination port: 0
 Host #0: no service for packet (from: 457, to: 123, 7 bytes)
+Host #5: sending packet (from: 458, to: 123, 7 bytes)
 Link: forwarding packet from node #5, to node #6
 Router #6: forwarding packet (from: 458, to: 123, 7 bytes)
 Link: forwarding packet from node #6, to node #0
 Host #0: received packet, destination port: 0
 Host #0: no service for packet (from: 458, to: 123, 7 bytes)
+Host #1: sending packet (from: 456, to: 123, 7 bytes)
 Link: forwarding packet from node #1, to node #6
 Router #6: forwarding packet (from: 456, to: 123, 7 bytes)
 Link: forwarding packet from node #6, to node #0
 Host #0: received packet, destination port: 3000
 EchoService: received "Hello 2" from 456:1000, send reply with same data
+Host #0: sending packet (from: 123, to: 456, 7 bytes)
 Link: forwarding packet from node #0, to node #6
 Router #6: forwarding packet (from: 123, to: 456, 7 bytes)
 Link: forwarding packet from node #6, to node #1
 Host #1: received packet, destination port: 1000
 MessageService: received "Hello 2" from 123:3000
+Host #3: sending packet (from: 457, to: 123, 7 bytes)
 Link: forwarding packet from node #3, to node #6
 Router #6: forwarding packet (from: 457, to: 123, 7 bytes)
 Link: forwarding packet from node #6, to node #0
 Host #0: received packet, destination port: 3000
 EchoService: received "Hello 2" from 457:1000, send reply with same data
+Host #0: sending packet (from: 123, to: 457, 7 bytes)
 Link: forwarding packet from node #0, to node #6
 Router #6: forwarding packet (from: 123, to: 457, 7 bytes)
 Link: forwarding packet from node #6, to node #3
 Host #3: received packet, destination port: 1000
 MessageService: received "Hello 2" from 123:3000
+Host #5: sending packet (from: 458, to: 123, 7 bytes)
 Link: forwarding packet from node #5, to node #6
 Router #6: forwarding packet (from: 458, to: 123, 7 bytes)
 Link: forwarding packet from node #6, to node #0
 Host #0: received packet, destination port: 3000
 EchoService: received "Hello 2" from 458:1000, send reply with same data
+Host #0: sending packet (from: 123, to: 458, 7 bytes)
 Link: forwarding packet from node #0, to node #6
 Router #6: forwarding packet (from: 123, to: 458, 7 bytes)
 Link: forwarding packet from node #6, to node #5
 Host #5: received packet, destination port: 1000
 MessageService: received "Hello 2" from 123:3000
+Host #1: sending packet (from: 456, to: 124, 7 bytes)
 Link: forwarding packet from node #1, to node #6
 Router #6: forwarding packet (from: 456, to: 124, 7 bytes)
 Link: forwarding packet from node #6, to node #2
 Host #2: received packet, destination port: 3000
 EchoService: received "Hello 2" from 456:1001, send reply with same data
+Host #2: sending packet (from: 124, to: 456, 7 bytes)
 Link: forwarding packet from node #2, to node #6
 Router #6: forwarding packet (from: 124, to: 456, 7 bytes)
 Link: forwarding packet from node #6, to node #1
 Host #1: received packet, destination port: 1001
 Host #1: received packet, destination port: 1001
 MessageService: received "Hello 2" from 124:3000
+Host #3: sending packet (from: 457, to: 124, 7 bytes)
 Link: forwarding packet from node #3, to node #6
 Router #6: forwarding packet (from: 457, to: 124, 7 bytes)
 Link: forwarding packet from node #6, to node #2
 Host #2: received packet, destination port: 3000
 EchoService: received "Hello 2" from 457:1001, send reply with same data
+Host #2: sending packet (from: 124, to: 457, 7 bytes)
 Link: forwarding packet from node #2, to node #6
 Router #6: forwarding packet (from: 124, to: 457, 7 bytes)
 Link: forwarding packet from node #6, to node #3
 Host #3: received packet, destination port: 1001
 Host #3: received packet, destination port: 1001
 MessageService: received "Hello 2" from 124:3000
+Host #5: sending packet (from: 458, to: 124, 7 bytes)
 Link: forwarding packet from node #5, to node #6
 Router #6: forwarding packet (from: 458, to: 124, 7 bytes)
 Link: forwarding packet from node #6, to node #2
 Host #2: received packet, destination port: 3000
 EchoService: received "Hello 2" from 458:1001, send reply with same data
+Host #2: sending packet (from: 124, to: 458, 7 bytes)
 Link: forwarding packet from node #2, to node #6
 Router #6: forwarding packet (from: 124, to: 458, 7 bytes)
 Link: forwarding packet from node #6, to node #5
 Host #5: received packet, destination port: 1001
 Host #5: received packet, destination port: 1001
 MessageService: received "Hello 2" from 124:3000
+Host #1: sending packet (from: 456, to: 125, 7 bytes)
 Link: forwarding packet from node #1, to node #6
 Router #6: forwarding packet (from: 456, to: 125, 7 bytes)
 Link: forwarding packet from node #6, to node #4
 Host #4: received packet, destination port: 3000
 EchoService: received "Hello 2" from 456:1002, send reply with same data
+Host #4: sending packet (from: 125, to: 456, 7 bytes)
 Link: forwarding packet from node #4, to node #6
 Router #6: forwarding packet (from: 125, to: 456, 7 bytes)
 Link: forwarding packet from node #6, to node #1
@@ -426,11 +494,13 @@ Host #1: received packet, destination port: 1002
 Host #1: received packet, destination port: 1002
 Host #1: received packet, destination port: 1002
 MessageService: received "Hello 2" from 125:3000
+Host #3: sending packet (from: 457, to: 125, 7 bytes)
 Link: forwarding packet from node #3, to node #6
 Router #6: forwarding packet (from: 457, to: 125, 7 bytes)
 Link: forwarding packet from node #6, to node #4
 Host #4: received packet, destination port: 3000
 EchoService: received "Hello 2" from 457:1002, send reply with same data
+Host #4: sending packet (from: 125, to: 457, 7 bytes)
 Link: forwarding packet from node #4, to node #6
 Router #6: forwarding packet (from: 125, to: 457, 7 bytes)
 Link: forwarding packet from node #6, to node #3
@@ -438,11 +508,13 @@ Host #3: received packet, destination port: 1002
 Host #3: received packet, destination port: 1002
 Host #3: received packet, destination port: 1002
 MessageService: received "Hello 2" from 125:3000
+Host #5: sending packet (from: 458, to: 125, 7 bytes)
 Link: forwarding packet from node #5, to node #6
 Router #6: forwarding packet (from: 458, to: 125, 7 bytes)
 Link: forwarding packet from node #6, to node #4
 Host #4: received packet, destination port: 3000
 EchoService: received "Hello 2" from 458:1002, send reply with same data
+Host #4: sending packet (from: 125, to: 458, 7 bytes)
 Link: forwarding packet from node #4, to node #6
 Router #6: forwarding packet (from: 125, to: 458, 7 bytes)
 Link: forwarding packet from node #6, to node #5
@@ -450,22 +522,28 @@ Host #5: received packet, destination port: 1002
 Host #5: received packet, destination port: 1002
 Host #5: received packet, destination port: 1002
 MessageService: received "Hello 2" from 125:3000
+Host #1: sending packet (from: 456, to: 0, 7 bytes)
 Link: forwarding packet from node #1, to node #6
 Router #6: no route for packet (from: 456, to: 0, 7 bytes)
+Host #3: sending packet (from: 457, to: 0, 7 bytes)
 Link: forwarding packet from node #3, to node #6
 Router #6: no route for packet (from: 457, to: 0, 7 bytes)
+Host #5: sending packet (from: 458, to: 0, 7 bytes)
 Link: forwarding packet from node #5, to node #6
 Router #6: no route for packet (from: 458, to: 0, 7 bytes)
+Host #1: sending packet (from: 456, to: 123, 7 bytes)
 Link: forwarding packet from node #1, to node #6
 Router #6: forwarding packet (from: 456, to: 123, 7 bytes)
 Link: forwarding packet from node #6, to node #0
 Host #0: received packet, destination port: 0
 Host #0: no service for packet (from: 456, to: 123, 7 bytes)
+Host #3: sending packet (from: 457, to: 123, 7 bytes)
 Link: forwarding packet from node #3, to node #6
 Router #6: forwarding packet (from: 457, to: 123, 7 bytes)
 Link: forwarding packet from node #6, to node #0
 Host #0: received packet, destination port: 0
 Host #0: no service for packet (from: 457, to: 123, 7 bytes)
+Host #5: sending packet (from: 458, to: 123, 7 bytes)
 Link: forwarding packet from node #5, to node #6
 Router #6: forwarding packet (from: 458, to: 123, 7 bytes)
 Link: forwarding packet from node #6, to node #0
