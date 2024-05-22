@@ -45,8 +45,6 @@ send 함수를 호출하여 문자열 데이터를 네트워크로 전송할 수
 MessageService: received "Hello, world!"
 ```
 
-이 클래스는 Service 함수를 상속해야 한다.
-
 ## first 시나리오 출력 예시
 ```
 Link: forwarding packet from node #1, to node #5
@@ -84,3 +82,8 @@ MessageService: received "Bye, world!"
 ```
 
 ## 과제 조건
+- 시나리오 코드를 수정하면 안된다.
+- 클래스에 요구사항에 맞는 적절한 코드를 작성해야 한다.
+- 동적 할당으로 사용한 메모리를 적절히 해제해야 한다.
+- Makefile에 선언된 CC와 FLAGS를 그대로 사용해야 한다.
+- MinGW가 설치된 Windows 환경에서 컴파일, 실행이 가능해야 한다.
