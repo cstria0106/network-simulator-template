@@ -45,7 +45,9 @@ send 함수를 호출하여 문자열 데이터를 네트워크로 전송할 수
 MessageService: received "Hello, world!"
 ```
 
-# first 시나리오 출력 예시
+이 클래스는 Service 함수를 상속해야 한다.
+
+## first 시나리오 출력 예시
 ```
 Link: forwarding packet from node #1, to node #5
 Router #5: forwarding packet (from: 0, to: 1, 13 bytes)
@@ -80,3 +82,5 @@ Router #5: forwarding packet (from: 1, to: 0, 11 bytes)
 Link: forwarding packet from node #5, to node #1
 MessageService: received "Bye, world!"
 ```
+
+## 과제 조건
