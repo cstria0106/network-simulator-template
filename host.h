@@ -24,7 +24,7 @@ public:
   void initialize();
 
   // 링크를 랜덤으로 하나 선택하여 패킷을 전송한다.
-  void forward(Packet *packet);
+  void send(Packet *packet);
 };
 
 #endif
