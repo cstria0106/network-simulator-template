@@ -10,7 +10,19 @@
 
 ### Host
 
-우리가 일반적으로 사용하는 컴퓨터와 같이 네트워킹이 가능한 기기를 나타낸 클래스다. 하나의 주소를 가지며 여러 링크를 가지지만, 패킷 전송 시 하나의 링크를 랜덤으로 골라 전송한다.
+우리가 일반적으로 사용하는 컴퓨터와 같이 네트워킹이 가능한 기기를 나타낸 클래스다. 하나의 주소를 가지며 여러 링크를 가지지만, 패킷 전송 시 하나의 링크를 랜덤으로 골라 전송한다. 패킷을 전송하거나 받을때 다음과 같이 출력한다.
+
+```
+Host #1: sending packet (from: 0, to: 1, 13 bytes)
+Host #0: received packet, destination port: 3000
+```
+
+포트에 맞는 서비스가 없다면 다음과 같이 출력한다.
+
+```
+Host #0: received packet, destination port: 0
+Host #0: no service for packet (from: 456, to: 123, 7 bytes)
+```
 
 ### Service
 
@@ -22,6 +34,12 @@ Host에 설치된 프로그램을 나타낸 클래스다. 하나의 포트를 �
 
 ```
 Router #2: forwarding packet (from: 1, to: 0, 13 bytes)
+```
+
+라우팅 테이블에 존재하지 않는 주소를 목적 주소로 하는 패킷이 온 경우, 다음 같이 출력한다.
+
+```
+Router #6: no route for packet (from: 456, to: 0, 7 bytes)
 ```
 
 ### ManualRouter
@@ -49,7 +67,7 @@ Link와 각 Service를 설치하는 것에 도움을 주는 Helper 클래스다.
 받은 패킷을 전송자에게 그대로 다시 전달하는 Service를 나타내는 클래스다. 받은 패킷을 다음과 같이 출력한다.
 
 ```
-EchoService: received "Hello, world!"
+EchoService: received "Hello, world!" from 0:1000, send reply with same data
 ```
 
 ### MessageService
@@ -57,7 +75,7 @@ EchoService: received "Hello, world!"
 send 함수를 호출하여 문자열 데이터를 네트워크로 전송할 수 있는 Service를 나타낸 클래스다. 받은 패킷을 다음과 같이 출력한다.
 
 ```
-MessageService: received "Hello, world!"
+MessageService: received "Hello, world!" from 1:3000
 ```
 
 ## 과제 조건
