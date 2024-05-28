@@ -67,7 +67,7 @@ protected:
   void log(std::string message) {
     std::ostringstream oss;
     oss.setf(std::ios::fixed);
-    oss.precision(1);
+    oss.precision(2);
     oss << Simulator::now() << "s";
     std::cout << std::setw(10) << std::left << oss.str() << std::setw(30)
               << std::left << toString() << " " << message << std::endl;
