@@ -28,7 +28,7 @@ int main() {
         new PacketSinkServiceInstaller();
 
     bulkSendServiceInstaller->install(bulkSendHost, Address(SERVER_ADDRESS),
-                                      SERVER_PORT);
+                                      SERVER_PORT, 0.123, 1.234, 3.456);
     packetSinkServiceInstaller->install(packetSinkHost, SERVER_PORT);
 
     std::vector<AutoRouter *> routers;
