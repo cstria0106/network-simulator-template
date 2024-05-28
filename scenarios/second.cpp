@@ -70,9 +70,14 @@ int main() {
 
   for (int x = 0; x < 3; x++) {
     for (size_t i = 0; i < messageServices.size(); i++) {
-      messageServices[i]->send("Hello " + std::to_string(x));
+      Simulator::schedule(
+          x * messageServices.size() + i, [i, x, messageServices]() -> void {
+            messageServices[i]->send("Hello " + std::to_string(x));
+          });
     }
   }
+
+  Simulator::run();
 
   for (int i = 0; i < COUNT; i++) {
     delete servers[i];
@@ -85,4 +90,6 @@ int main() {
     delete serverLinks[i];
     delete clientLinks[i];
   }
+
+  Object::checkMemoryLeak();
 }
