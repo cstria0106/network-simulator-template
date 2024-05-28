@@ -5,6 +5,8 @@
 #include "service.h"
 #include "simulator.h"
 
+#define PACKET_SIZE 512
+
 class BulkSendService : Service {
   friend class BulkSendServiceInstaller;
 
