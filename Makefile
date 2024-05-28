@@ -9,11 +9,9 @@ first.o: scenarios/first.cpp
 second.o: scenarios/second.cpp
 	$(CC) $(CFLAGS) -c scenarios/second.cpp
 
-first: first.o
-	$(CC) $(CFLAGS) -o first
+simulator.o: simulator.cpp
+	$(CC) $(CFLAGS) -c simulator.cpp
 
-second: second.o
-	$(CC) $(CFLAGS) -o second second.o
 
 clean:
 	rm -f *.o first
