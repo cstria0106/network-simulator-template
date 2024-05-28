@@ -2,10 +2,11 @@
 #define PACKET_H
 
 #include "address.h"
+#include "object.h"
 #include <string>
 #include <vector>
 
-class Packet {
+class Packet : Object {
 public:
   Packet(Address srcAddress, Address destAddress, short srcPort, short destPort,
          std::string data)

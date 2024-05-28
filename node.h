@@ -2,10 +2,11 @@
 #define NODE_H
 
 #include "link.h"
+#include "object.h"
 #include "packet.h"
 #include <vector>
 
-class Node {
+class Node : Object {
   friend class LinkInstaller;
 
 private:

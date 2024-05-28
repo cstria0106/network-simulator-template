@@ -1,12 +1,13 @@
 #ifndef LINK_H
 #define LINK_H
 
+#include "object.h"
 #include "packet.h"
 #include <cstdlib>
 
 class Node;
 
-class Link {
+class Link : Object {
   friend class LinkInstaller;
 
 private:

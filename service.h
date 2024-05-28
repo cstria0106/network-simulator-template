@@ -2,10 +2,11 @@
 #define SERVICE_H
 
 #include "node.h"
+#include "object.h"
 
 class Host;
 
-class Service {
+class Service : Object {
   friend class ServiceInstaller;
 
 protected:
