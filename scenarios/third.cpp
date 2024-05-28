@@ -6,12 +6,16 @@
 #include "../link_installer.h"
 #include "../packet_sink_service_installer.h"
 
+#define CLIENT_ADDRESS "10.0.0.1"
+#define SERVER_ADDRESS "10.0.1.1"
+#define SERVER_PORT 5000
+
 int main() {
   {
     std::vector<Host *> hosts;
     std::vector<Node *> nodes;
-    Host *bulkSendHost = new Host(Address("10.0.0.1"));
-    Host *packetSinkHost = new Host(Address("10.0.1.1"));
+    Host *bulkSendHost = new Host(Address(CLIENT_ADDRESS));
+    Host *packetSinkHost = new Host(Address(SERVER_ADDRESS));
 
     hosts.push_back(bulkSendHost);
     hosts.push_back(packetSinkHost);
@@ -23,8 +27,9 @@ int main() {
     PacketSinkServiceInstaller *packetSinkServiceInstaller =
         new PacketSinkServiceInstaller();
 
-    bulkSendServiceInstaller->install(bulkSendHost, Address("10.0.1.1"), 5000);
-    packetSinkServiceInstaller->install(packetSinkHost, 5000);
+    bulkSendServiceInstaller->install(bulkSendHost, Address(SERVER_ADDRESS),
+                                      SERVER_PORT);
+    packetSinkServiceInstaller->install(packetSinkHost, SERVER_PORT);
 
     std::vector<AutoRouter *> routers;
     for (int i = 0; i < 4; i++) {

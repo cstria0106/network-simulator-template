@@ -7,7 +7,8 @@
 
 class BulkSendServiceInstaller : public ServiceInstaller {
 public:
-  BulkSendService *install(Host *host, Address destination, short port);
+  BulkSendService *install(Host *host, Address destination,
+                           short destinationPort);
 };
 
 #endif
