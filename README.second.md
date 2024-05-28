@@ -1,3 +1,7 @@
+다음 링크를 통해 코드 변경점 확인하여 수정
+
+https://github.com/cstria0106/network-simulator-template/compare/main...second
+
 ## 변경점
 
 ### 추가
@@ -35,3 +39,7 @@
 ### Simulator
 
 시뮬레이션의 스케줄링을 담당하는 클래스. 코드 전체에서 Simulator::schedule 함수를 통해 함수 실행을 예약할 수 있고, Simulator::time을 통해 시뮬레이터 상의 현재 시간을 알아낼 수 있다.
+
+## 출력 예시
+
+outputs 폴더의 txt 파일을 참고할 것

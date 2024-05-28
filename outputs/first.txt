@@ -1,0 +1,57 @@
+1.00s     0886<Host>                     sending packet: 1152<Packet>
+1.00s     0059<Link>                     packet in: 1152<Packet> from 0492<ManualRouter>
+1.00s     0059<Link>                     packet out: 1152<Packet> to 0492<ManualRouter>
+1.00s     0492<ManualRouter>             forwarding packet: 1152<Packet> to 0027<Link>
+1.00s     0027<Link>                     packet in: 1152<Packet> from 8335<ManualRouter>
+1.00s     0027<Link>                     packet out: 1152<Packet> to 8335<ManualRouter>
+1.00s     8335<ManualRouter>             forwarding packet: 1152<Packet> to 1421<Link>
+1.00s     1421<Link>                     packet in: 1152<Packet> from 7793<ManualRouter>
+1.00s     1421<Link>                     packet out: 1152<Packet> to 7793<ManualRouter>
+1.00s     7793<ManualRouter>             forwarding packet: 1152<Packet> to 6649<Link>
+1.00s     6649<Link>                     packet in: 1152<Packet> from 9383<Host>
+1.00s     6649<Link>                     packet out: 1152<Packet> to 9383<Host>
+1.00s     9383<Host>                     received packet: 1152<Packet>, forwarding to 2777<EchoService>
+1.00s     2777<EchoService>              received "Hello, world!" from 0:1000, send reply with same data
+1.00s     9383<Host>                     sending packet: 4766<Packet>
+1.00s     6649<Link>                     packet in: 4766<Packet> from 7793<ManualRouter>
+1.00s     6649<Link>                     packet out: 4766<Packet> to 7793<ManualRouter>
+1.00s     7793<ManualRouter>             forwarding packet: 4766<Packet> to 1421<Link>
+1.00s     1421<Link>                     packet in: 4766<Packet> from 8335<ManualRouter>
+1.00s     1421<Link>                     packet out: 4766<Packet> to 8335<ManualRouter>
+1.00s     8335<ManualRouter>             forwarding packet: 4766<Packet> to 0027<Link>
+1.00s     0027<Link>                     packet in: 4766<Packet> from 0492<ManualRouter>
+1.00s     0027<Link>                     packet out: 4766<Packet> to 0492<ManualRouter>
+1.00s     0492<ManualRouter>             forwarding packet: 4766<Packet> to 0059<Link>
+1.00s     0059<Link>                     packet in: 4766<Packet> from 0886<Host>
+1.00s     0059<Link>                     packet out: 4766<Packet> to 0886<Host>
+1.00s     0886<Host>                     received packet: 4766<Packet>, forwarding to 6915<MessageService>
+1.00s     6915<MessageService>           received "Hello, world!" from 1:3000
+2.00s     0886<Host>                     sending packet: 4640<Packet>
+2.00s     0059<Link>                     packet in: 4640<Packet> from 0492<ManualRouter>
+2.00s     0059<Link>                     packet out: 4640<Packet> to 0492<ManualRouter>
+2.00s     0492<ManualRouter>             forwarding packet: 4640<Packet> to 0027<Link>
+2.00s     0027<Link>                     packet in: 4640<Packet> from 8335<ManualRouter>
+2.00s     0027<Link>                     packet out: 4640<Packet> to 8335<ManualRouter>
+2.00s     8335<ManualRouter>             forwarding packet: 4640<Packet> to 1421<Link>
+2.00s     1421<Link>                     packet in: 4640<Packet> from 7793<ManualRouter>
+2.00s     1421<Link>                     packet out: 4640<Packet> to 7793<ManualRouter>
+2.00s     7793<ManualRouter>             forwarding packet: 4640<Packet> to 6649<Link>
+2.00s     6649<Link>                     packet in: 4640<Packet> from 9383<Host>
+2.00s     6649<Link>                     packet out: 4640<Packet> to 9383<Host>
+2.00s     9383<Host>                     received packet: 4640<Packet>, forwarding to 2777<EchoService>
+2.00s     2777<EchoService>              received "Bye, world!" from 0:1000, send reply with same data
+2.00s     9383<Host>                     sending packet: 3121<Packet>
+2.00s     6649<Link>                     packet in: 3121<Packet> from 7793<ManualRouter>
+2.00s     6649<Link>                     packet out: 3121<Packet> to 7793<ManualRouter>
+2.00s     7793<ManualRouter>             forwarding packet: 3121<Packet> to 1421<Link>
+2.00s     1421<Link>                     packet in: 3121<Packet> from 8335<ManualRouter>
+2.00s     1421<Link>                     packet out: 3121<Packet> to 8335<ManualRouter>
+2.00s     8335<ManualRouter>             forwarding packet: 3121<Packet> to 0027<Link>
+2.00s     0027<Link>                     packet in: 3121<Packet> from 0492<ManualRouter>
+2.00s     0027<Link>                     packet out: 3121<Packet> to 0492<ManualRouter>
+2.00s     0492<ManualRouter>             forwarding packet: 3121<Packet> to 0059<Link>
+2.00s     0059<Link>                     packet in: 3121<Packet> from 0886<Host>
+2.00s     0059<Link>                     packet out: 3121<Packet> to 0886<Host>
+2.00s     0886<Host>                     received packet: 3121<Packet>, forwarding to 6915<MessageService>
+2.00s     6915<MessageService>           received "Bye, world!" from 1:3000
+Memory leak check is disabled.
