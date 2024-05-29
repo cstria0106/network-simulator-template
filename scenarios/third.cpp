@@ -12,6 +12,8 @@
 
 int main() {
   {
+    Simulator::prepare();
+
     std::vector<Host *> hosts;
     std::vector<Node *> nodes;
     Host *bulkSendHost = new Host(Address(CLIENT_ADDRESS));

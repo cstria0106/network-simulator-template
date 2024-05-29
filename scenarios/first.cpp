@@ -1,3 +1,5 @@
+#define CHECK_MEMORY_LEAK
+
 #include "../echo_service.h"
 #include "../echo_service_installer.h"
 #include "../host.h"
@@ -9,6 +11,8 @@
 #define ECHO_PORT 3000
 
 int main() {
+  Simulator::prepare();
+
   // ---------- //
   // 토폴로지 설정 //
   // ---------- //

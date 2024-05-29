@@ -1,3 +1,5 @@
+#define CHECK_MEMORY_LEAK
+
 #include "../echo_service.h"
 #include "../echo_service_installer.h"
 #include "../host.h"
@@ -15,6 +17,8 @@
 #define CLIENT_ADDRESS_START 456
 
 int main() {
+  Simulator::prepare();
+
   std::vector<Host *> servers;
   std::vector<Host *> clients;
 
