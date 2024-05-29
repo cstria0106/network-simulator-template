@@ -54,4 +54,4 @@
 2.00s     6546<Link>                     packet out: 4866<Packet> to 1851<Host>
 2.00s     1851<Host>                     received packet: 4866<Packet>, forwarding to 7181<MessageService>
 2.00s     7181<MessageService>           received "Bye, world!" from 1:3000
-Memory leak check is disabled.
+No memory leak detected.

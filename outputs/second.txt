@@ -529,4 +529,4 @@
 44.00s    9801<Link>                     packet in: 5537<Packet> from 1152<Host>
 44.00s    9801<Link>                     packet out: 5537<Packet> to 1152<Host>
 44.00s    1152<Host>                     no service for packet: 5537<Packet>
-Memory leak check is disabled.
+No memory leak detected.
