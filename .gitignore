@@ -1,4 +1,7 @@
 *.o
-*.exe
-first
-main
+/*.exe
+/first
+/second
+/third
+/forth
+/main

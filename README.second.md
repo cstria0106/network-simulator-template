@@ -42,4 +42,4 @@ https://github.com/cstria0106/network-simulator-template/compare/main...second
 
 ## 출력 예시
 
-outputs 폴더의 txt 파일을 참고할 것
+bin 폴더에 있는 바이너리를 실행해 확인할 것

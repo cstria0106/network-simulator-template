@@ -35,4 +35,4 @@ object.o: object.cpp
 	$(CC) $(CFLAGS) -c object.cpp
 
 clean:
-	rm -f *.o first
+	rm -f *.o *.exe first second third forth
