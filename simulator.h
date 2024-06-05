@@ -37,10 +37,7 @@ public:
     // TODO: 구현
   }
 
-  static void run() {
-    // 모든 스케줄을 실행한다.
-    // TODO: 구현
-  }
+  static void run();
 };
 
 #endif
