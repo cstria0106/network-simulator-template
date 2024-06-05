@@ -76,10 +76,6 @@ int main() {
   // 시뮬레이션 수행 //
   // ------------ //
 
-  // 각 호스트를 초기화한다.
-  echoServer->initialize();
-  messageClient->initialize();
-
   // 메시지를 전송한다.
   Simulator::schedule(
       1.0, [messageService]() { messageService->send("Hello, world!"); });
@@ -88,22 +84,4 @@ int main() {
       2.0, [messageService]() { messageService->send("Bye, world!"); });
 
   Simulator::run();
-
-  // --- //
-  // 정리 //
-  // --- //
-
-  // 생성한 객체를 제거한다.
-  for (size_t i = 0; i < links.size(); i++) {
-    delete links[i];
-  }
-
-  for (size_t i = 0; i < routers.size(); i++) {
-    delete routers[i];
-  }
-
-  delete echoServer;
-  delete messageClient;
-
-  Object::checkMemoryLeak();
 }

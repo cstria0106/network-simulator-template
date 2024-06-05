@@ -68,20 +68,5 @@ int main() {
 
   router->calculate(nodes, links);
 
-  for (int i = 0; i < COUNT; i++) {
-    clients[i]->initialize();
-    servers[i]->initialize();
-  }
-
   Simulator::run();
-
-  for (auto node : nodes) {
-    delete node;
-  }
-
-  for (auto link : links) {
-    delete link;
-  }
-
-  Object::checkMemoryLeak();
 }

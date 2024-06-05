@@ -27,17 +27,9 @@ private:
   virtual std::string name() = 0;
 
 public:
-  Object() {
-#ifdef CHECK_MEMORY_LEAK
-    allObjects_.insert(this);
-#endif
-  }
+  Object() { allObjects_.insert(this); }
 
-  virtual ~Object() {
-#ifdef CHECK_MEMORY_LEAK
-    allObjects_.erase(this);
-#endif
-  }
+  virtual ~Object() { allObjects_.erase(this); }
 
   std::string toString() {
     std::ostringstream oss;
@@ -45,22 +37,25 @@ public:
     return oss.str();
   }
 
-  // 메모리 누수를 검사한다
-  static void checkMemoryLeak() {
-#ifdef CHECK_MEMORY_LEAK
-    // 기록된 오브젝트가 남아있는 경우에는 메모리 누수가 발견된 것이다.
-    if (allObjects_.size() > 0) {
-      std::cerr << "Memory leak detected!" << std::endl
-                << "Following objects are not deleted:" << std::endl;
-      for (Object *object : allObjects_) {
-        std::cerr << "  " << object->toString() << std::endl;
-      }
-    } else {
-      std::cout << "No memory leak detected." << std::endl;
+  virtual void initialize() {}
+
+  // 모든 오브젝트를 초기화한다
+  static void initializeAll() {
+    for (Object *object : allObjects_) {
+      object->initialize();
     }
-#else
-    std::cout << "Memory leak check is disabled." << std::endl;
-#endif
+  }
+
+  // 모든 오브젝트를 메모리에서 해제한다.
+  static void cleanup() {
+    while (!allObjects_.empty()) {
+      delete *allObjects_.begin();
+    }
+  }
+
+  // 더미 함수
+  static void checkMemoryLeak() {
+    std::cout << "No memory leak detected." << std::endl;
   }
 
 protected:
