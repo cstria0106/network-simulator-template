@@ -1,6 +1,6 @@
 다음 링크를 통해 코드 변경점 확인하여 수정
 
-https://github.com/cstria0106/network-simulator-template/compare/main...third
+https://github.com/cstria0106/network-simulator-template/compare/second...third
 
 ## 변경점
 
