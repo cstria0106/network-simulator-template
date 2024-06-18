@@ -19,6 +19,11 @@ private:
   Node *other(const Node *node) const {
     return node == nodeA_ ? nodeB_ : nodeA_;
   }
+
+  void onReceive(Node* sender, Packet* packet) {
+    Node* receiver = other(sender);
+    receiver->onReceive(packet);
+  }
 };
 
 #endif

@@ -24,7 +24,24 @@ public:
   void initialize();
 
   // 링크를 랜덤으로 하나 선택하여 패킷을 전송한다.
-  void send(Packet *packet);
+  void send(Packet *packet) {
+    getRandomLink()->onReceive(this, packet);
+  }
+
+  void onReceive(Packet* packet) override {
+    Service *service;
+    for(int i = 0; i < services_.size(); i++) {
+      Service* s = services_[i];
+      if(s->port_ == packet->destPort()) {
+        service = s;
+        break;
+      }
+    }
+
+    if(service != nullptr) {
+      service->onRecieve(packet)
+    }
+  } 
 };
 
 #endif

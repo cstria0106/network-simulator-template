@@ -15,6 +15,8 @@ private:
 public:
   Node() : id_(nextId_++) {}
   int id() const { return id_; }
+
+  virtual void onReceive(Packet *packet);
 };
 
 #endif
