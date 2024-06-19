@@ -4,7 +4,10 @@
 #include <set>
 #include <string>
 
-class FirewallPolicy : public Object {};
+class FirewallPolicy : public Object {
+  public:
+  virtual bool isAllowed(Packet* packet);
+};
 
 class Firewall : public Node {
 private:
@@ -27,10 +30,23 @@ private:
   };
 
   Link *receiveLink_ = nullptr;
+  std::vector<FirewallPolicy*> policies_;
 
 public:
   void setReceiveLink(Link *link) { receiveLink_ = link; }
 
   void addAllowAnyPolicy(short destPort);
   void addAllowSpecificPolicy(Address srcAddress, short destPort);
+
+  void onReceive(Packet* packet) {
+    for(int i = 0; i < policies_.size(); i++) {
+      FirewallPolicy* policy =  policies_[i];
+      if(policy->isAllowed(packet)) {
+        allowPacket(packet);
+        return;
+      }
+    }
+
+    dropPacket(packet);
+  }
 };
